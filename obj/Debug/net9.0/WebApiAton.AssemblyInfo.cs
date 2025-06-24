@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiAton")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35ab17caa42959c36dfacf79f2ee586f412dd5f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98ddaf18e8c5e3f819b948f4ab5ee0f5dca4f7fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiAton")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiAton")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

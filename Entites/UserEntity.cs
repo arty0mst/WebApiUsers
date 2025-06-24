@@ -13,9 +13,9 @@ namespace Entites
         public bool Admin { get; set; } // Является ли пользователь админом
         public DateTime CreatedOn { get; set; } // Дата создания
         public string CreatedBy { get; set; } = string.Empty;//  Логин, от имени которого этот пользователь создан
-        public DateTime ModifiedOn { get; set; } // Дата изменения 
+        public DateTime? ModifiedOn { get; set; } // Дата изменения 
         public string ModifiedBy { get; set; } = string.Empty; // Логин, от имени которого этот пользователь изменен
-        public DateTime RevokedOn { get; set; } // Дата удаления
+        public DateTime? RevokedOn { get; set; } // Дата удаления
         public string RevokedBy { get; set; }  = string.Empty; // Логин, от имени которого этот пользователь удален
     }
 }

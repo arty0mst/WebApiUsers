@@ -53,7 +53,7 @@ namespace Repositories
         }
 
         public async Task<Guid> Update(Guid guid, string login, string password, string name, int gender, DateTime? birthday, bool admin,
-            DateTime createdOn, string createdBy, DateTime modifiedOn, string modifiedBy, DateTime revokedOn, string revokedBy)
+            DateTime createdOn, string createdBy, DateTime? modifiedOn, string modifiedBy, DateTime? revokedOn, string revokedBy)
         {
             await _context.Users
                 .Where(u => u.Guid == guid)

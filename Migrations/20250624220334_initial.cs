@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApiAton.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,9 +24,9 @@ namespace WebApiAton.Migrations
                     Admin = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ModifiedBy = table.Column<string>(type: "text", nullable: false),
-                    RevokedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    RevokedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     RevokedBy = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>

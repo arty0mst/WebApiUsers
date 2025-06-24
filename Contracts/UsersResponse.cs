@@ -10,8 +10,8 @@ namespace Contracts
         bool Admin, 
         DateTime CreatedOn, 
         string CreatedBy, 
-        DateTime ModifiedOn, 
+        DateTime? ModifiedOn, 
         string ModifiedBy, 
-        DateTime RevokedOn, 
+        DateTime? RevokedOn, 
         string RevokedBy);
 }

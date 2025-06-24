@@ -5,7 +5,7 @@ namespace Models
     public class User
     {
         private User(Guid guid, string login, string password, string name, int gender, DateTime? birthday, bool admin,
-            DateTime createdOn, string createdBy, DateTime modifiedOn, string modifiedBy, DateTime revokedOn, string revokedBy)
+            DateTime createdOn, string createdBy, DateTime? modifiedOn, string modifiedBy, DateTime? revokedOn, string revokedBy)
         {
             Guid = guid;
             Login = login;
@@ -32,13 +32,13 @@ namespace Models
         public bool Admin { get; } // Является ли пользователь админом
         public DateTime CreatedOn { get; } // Дата создания
         public string CreatedBy { get; } //  Логин, от имени которого этот пользователь создан
-        public DateTime ModifiedOn { get; } // Дата изменения 
+        public DateTime? ModifiedOn { get; } // Дата изменения 
         public string ModifiedBy { get; }  // Логин, от имени которого этот пользователь изменен
-        public DateTime RevokedOn { get; } // Дата удаления
+        public DateTime? RevokedOn { get; } // Дата удаления
         public string RevokedBy { get; }  // Логин, от имени которого этот пользователь удален
 
         public static (User User, string Error) Create(Guid guid, string login, string password, string name, int gender, DateTime? birthday, bool admin,
-            DateTime createdOn, string createdBy, DateTime modifiedOn, string modifiedBy, DateTime revokedOn, string revokedBy)
+            DateTime createdOn, string createdBy, DateTime? modifiedOn, string modifiedBy, DateTime? revokedOn, string revokedBy)
         {
             string error = String.Empty;
 

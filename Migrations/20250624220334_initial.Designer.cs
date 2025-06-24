@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace WebApiAton.Migrations
 {
     [DbContext(typeof(UserStoreDbContext))]
-    [Migration("20250624113006_init")]
-    partial class init
+    [Migration("20250624220334_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,7 +55,7 @@ namespace WebApiAton.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("ModifiedOn")
+                    b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
@@ -70,7 +70,7 @@ namespace WebApiAton.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("RevokedOn")
+                    b.Property<DateTime?>("RevokedOn")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Guid");

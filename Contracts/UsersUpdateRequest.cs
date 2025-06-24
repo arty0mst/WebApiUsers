@@ -1,10 +1,9 @@
 namespace Contracts
 {
-    public record UsersRequest(
+    public record UsersUpdateRequest(
         string Login,
         string Password,
         string Name, 
         int Gender,
-        DateTime? Birthday, 
-        bool Admin);
+        DateTime? Birthday);
 }
