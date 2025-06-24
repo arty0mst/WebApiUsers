@@ -6,7 +6,7 @@ using Models;
 namespace Controllers
 {
     [ApiController]
-    [Route("controller")]
+    [Route("controller/{login}&{password}")]
     public class UsersController : ControllerBase
     {
         private readonly IUsersService _usersService;
@@ -17,9 +17,23 @@ namespace Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<UsersResponse>>> GetUsers()
+        public async Task<ActionResult<List<UsersResponse>>> GetUsers([FromRoute] string login, [FromRoute] string password)
         {
+            await _usersService.EnsureAdminExists();
+
             var users = await _usersService.GetAllUsers();
+
+            var userCurrent = users.FirstOrDefault(u => u.Login == login);
+
+            if (userCurrent == null)
+            {
+                return BadRequest("Пользователь не найден");
+            }
+
+            if (userCurrent?.Password != password)
+            {
+                return BadRequest("Неверный пароль");
+            }
 
             var response = users.Select(u => new UsersResponse(u.Guid, u.Login, u.Password, u.Name, u.Gender, u.Birthday, u.Admin, u.CreatedOn, u.CreatedBy, u.ModifiedOn, u.ModifiedBy, u.RevokedOn, u.RevokedBy));
 
@@ -29,6 +43,8 @@ namespace Controllers
         [HttpPost]
         public async Task<ActionResult<Guid>> CreateUser([FromBody] UsersRequest request)
         {
+            await _usersService.EnsureAdminExists();
+            
             var (user, error) = Models.User.Create(
                 Guid.NewGuid(),
                 request.Login,
@@ -58,6 +74,8 @@ namespace Controllers
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<Guid>> UpdateUsers(Guid id, [FromBody] UsersRequest request)
         {
+            await _usersService.EnsureAdminExists();
+            
             var userId = await _usersService.UpdateUser(
                 id,
                 request.Login,
@@ -80,7 +98,9 @@ namespace Controllers
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<Guid>> DeleteUsers(Guid id)
         {
-            return Ok(await _usersService.DeleteBook(id));
+            await _usersService.EnsureAdminExists();
+            
+            return Ok(await _usersService.DeleteUser(id));
         }
 
     }
