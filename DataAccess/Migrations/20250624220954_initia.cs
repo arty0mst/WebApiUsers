@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WebApiAton.Migrations
+namespace WebApiUser.Migrations
 {
     /// <inheritdoc />
     public partial class initia : Migration

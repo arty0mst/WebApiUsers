@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace WebApiAton.Migrations
+namespace WebApiUser.Migrations
 {
     [DbContext(typeof(UserStoreDbContext))]
     partial class UserStoreDbContextModelSnapshot : ModelSnapshot

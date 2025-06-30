@@ -2992,11 +2992,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/artemstarikov/Documents/WebApiAton/WebApiAton.csproj",
-      "projectName": "WebApiAton",
-      "projectPath": "/Users/artemstarikov/Documents/WebApiAton/WebApiAton.csproj",
+      "projectUniqueName": "/Users/artemstarikov/Documents/WebApiUser/WebApiUser.csproj",
+      "projectName": "WebApiUser",
+      "projectPath": "/Users/artemstarikov/Documents/WebApiUser/WebApiUser.csproj",
       "packagesPath": "/Users/artemstarikov/.nuget/packages/",
-      "outputPath": "/Users/artemstarikov/Documents/WebApiAton/obj/",
+      "outputPath": "/Users/artemstarikov/Documents/WebApiUser/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/artemstarikov/.nuget/NuGet/NuGet.Config"

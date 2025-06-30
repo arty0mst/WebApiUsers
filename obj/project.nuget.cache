@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0OJSQwHjmxI=",
+  "dgSpecHash": "AO3oDhwlSjc=",
   "success": true,
-  "projectFilePath": "/Users/artemstarikov/Documents/WebApiAton/WebApiAton.csproj",
+  "projectFilePath": "/Users/artemstarikov/Documents/WebApiUser/WebApiUser.csproj",
   "expectedPackageFiles": [
     "/Users/artemstarikov/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/artemstarikov/.nuget/packages/microsoft.aspnetcore.openapi/9.0.1/microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
