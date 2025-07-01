@@ -1,6 +1,16 @@
 services:
+  webapiusers:
+    container_name: webapiusers_compose
+    depends_on: 
+      - postgres
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: dockerfile
+
   postgres:
-    container_name: postgres
+    container_name: postgres_compose
     image: postgres:latest
     environment:
       POSTGRES_DB: "userstoredb" 
