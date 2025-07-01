@@ -14,15 +14,21 @@ builder.Services.AddDbContext<UserStoreDbContext>(
     {
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(UserStoreDbContext)));
     });
-
+    
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<UserStoreDbContext>();
+    dbContext.Database.Migrate();
+}
+
 //if (app.Environment.IsDevelopment())
 //{
-    app.UseSwagger();
+app.UseSwagger();
     app.UseSwaggerUI();
 //}
 
